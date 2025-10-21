@@ -1,0 +1,44 @@
+/* src/components/DemoCard.module.css */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--secondary-accent);
+}
+.cardIcon {
+  font-size: 2.5rem;
+  color: var(--secondary-accent);
+  margin-bottom: 1.5rem;
+}
+.cardTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.cardDescription {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.demoButton {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--secondary-accent);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.demoButton:hover {
+  background-color: var(--secondary-accent);
+}

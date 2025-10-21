@@ -1,0 +1,123 @@
+/* src/demos/WriterDemo.module.css */
+.demoContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--gradient-bg);
+}
+.writerBox {
+  width: 100%;
+  max-width: 700px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.header h2 {
+  font-size: 1.5rem;
+}
+.backButton {
+    background: transparent;
+    border: 1px solid var(--secondary-accent);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.backButton:hover {
+    background-color: var(--secondary-accent);
+}
+.inputSection {
+  margin-bottom: 2rem;
+}
+.inputSection label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+.inputSection input {
+  width: 100%;
+  background-color: #0c1221;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.inputSection button {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg, var(--secondary-accent), var(--primary-accent));
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.inputSection button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.outputSection h3 {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.outputBox {
+  width: 100%;
+  min-height: 150px;
+  background-color: #0c1221;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--secondary-accent);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* src/demos/WriterDemo.module.css V3 */
+.demoContainer { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 2rem; background: var(--gradient-bg); }
+.writerBox { width: 100%; max-width: 700px; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.header h2 { font-size: 1.5rem; }
+.backButton { background: transparent; border: 1px solid var(--secondary-accent); color: #fff; padding: 0.5rem 1rem; border-radius: 50px; cursor: pointer; transition: background-color 0.3s; }
+.backButton:hover { background-color: var(--secondary-accent); }
+.inputGroup { margin-bottom: 1.5rem; }
+.inputGroup label { display: block; margin-bottom: 0.5rem; color: var(--text-secondary); }
+.inputGroup input { width: 100%; background-color: #0c1221; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.8rem 1.2rem; color: #fff; font-size: 1rem; }
+.toneSelector { display: flex; gap: 1rem; }
+.toneSelector button { flex-grow: 1; background-color: #334155; border: 1px solid var(--border-color); color: var(--text-secondary); padding: 0.8rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+.toneSelector button.active { background-color: var(--secondary-accent); color: #fff; border-color: var(--secondary-accent); }
+.generateButton { width: 100%; font-size: 1rem; font-weight: 500; color: #fff; background: linear-gradient(90deg, var(--secondary-accent), var(--primary-accent)); padding: 1rem; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.3s; }
+.generateButton:disabled { opacity: 0.5; cursor: not-allowed; }
+.outputSection { margin-top: 2rem; }
+.outputSection h3 { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1rem; }
+.outputBox { width: 100%; min-height: 150px; background-color: #0c1221; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; color: var(--text-primary); line-height: 1.6; }
+.loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--secondary-accent); border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto; }
+.errorText { color: #ff5b5b; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

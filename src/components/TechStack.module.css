@@ -1,0 +1,48 @@
+/* src/components/TechStack.module.css */
+.stackSection {
+    padding: 80px 2rem;
+    background-color: var(--bg-dark);
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.stackGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skillCard {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 120px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skillCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.skillIcon {
+    font-size: 3rem;
+    color: var(--secondary-accent);
+    margin-bottom: 1rem;
+}
+
+.skillName {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}

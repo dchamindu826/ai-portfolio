@@ -1,0 +1,54 @@
+/* src/demos/DemoPage.module.css */
+.demoContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--gradient-bg);
+  text-align: center;
+}
+
+.demoContainer h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.demoContainer p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.demoPlaceholder {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--secondary-accent);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: var(--secondary-accent);
+}

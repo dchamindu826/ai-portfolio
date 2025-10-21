@@ -1,0 +1,18 @@
+/* src/components/DemoList.module.css */
+.demoSection {
+  padding: 100px 2rem;
+  background-color: #131b31;
+}
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: var(--text-primary);
+}
+.demoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
