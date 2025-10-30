@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContent}>
-                <p>&copy; {new Date().getFullYear()} [Your Name]. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Design-Portal. All Rights Reserved.</p>
                 <div className={styles.socialLinks}>
                     {/* CHANGE 2: Use the new SiFiverr icon component */}
                     <a href="https://www.fiverr.com/designportal_?public_mode=true" target="_blank" rel="noopener noreferrer"><SiFiverr /></a>
