@@ -112,12 +112,12 @@
 /* --- Animation --- */
 .animationWrapper {
   position: relative;
-  width: 100%;
-  height: 400px; /* ඉඩ වැඩි කරා */
+  width: 120%;
+  height: 300px; /* ඉඩ වැඩි කරා */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 25px 0;
   z-index: 5;
   transform: scale(0.7); 
   overflow: visible;
