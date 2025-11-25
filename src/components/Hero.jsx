@@ -1,38 +1,45 @@
 // src/components/Hero.jsx
 import React from 'react';
+import HeroAnimation from './HeroAnimation';
+import ParticleBackground from './ParticleBackground';
 import styles from './Hero.module.css';
 
-// Import your 4 hero background images
-import heroBg1 from '../assets/hero-bg-1.jpg';
-import heroBg2 from '../assets/hero-bg-2.jpg';
-import heroBg3 from '../assets/hero-bg-3.jpg';
-import heroBg4 from '../assets/hero-bg-4.jpg';
-
 const Hero = () => {
-    return (
-        // Pass the imported images as CSS custom properties
-        <div 
-            className={styles.heroContainer}
-            style={{
-                '--hero-bg-1': `url(${heroBg1})`,
-                '--hero-bg-2': `url(${heroBg2})`,
-                '--hero-bg-3': `url(${heroBg3})`,
-                '--hero-bg-4': `url(${heroBg4})`,
-            }}
-        >
-            <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>
-                    Building the Next Generation of Intelligent Applications
-                </h1>
-                <p className={styles.heroSubtitle}>
-                    I specialize in creating custom AI-powered solutions that are not just smart, but are also intuitive, efficient, and designed to drive business growth.
-                </p>
-                <a href="https://www.fiverr.com/designportal_?public_mode=true" target="_blank" rel="noopener noreferrer" className={styles.heroButton}>
-                    Let's Collaborate
-                </a>
-            </div>
+  return (
+    <section className={styles.hero} id="hero">
+      
+      {/* No Lines, Just Dust */}
+      <ParticleBackground />
+
+      <div className={styles.centerContainer}>
+        
+        {/* New Stylish Badge */}
+        <div className={styles.availabilityBadge}>
+            <div className={styles.pulseDot}></div>
+            <span className={styles.badgeText}>Available for New Projects</span>
         </div>
-    );
+
+        <h1 className={styles.heroTitle}>
+            Designing the <br/>
+            <span className={styles.gradientText}>Future of Web</span>
+        </h1>
+
+        <p className={styles.heroSubtitle}>
+            I build high-performance, AI-driven applications that look beautiful and work flawlessly.
+        </p>
+
+        <div className={styles.animationWrapper}>
+            <HeroAnimation />
+        </div>
+
+        <div className={styles.btnGroup}>
+             <a href="#projects" className={styles.btnPrimary}>Explore Work</a>
+             <a href="https://www.fiverr.com/designportal_" target="_blank" rel="noreferrer" className={styles.btnSecondary}>Contact Me</a>
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default Hero;

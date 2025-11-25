@@ -1,94 +1,163 @@
 /* src/components/Hero.module.css */
-.heroContainer {
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  min-height: 100vh;
-  width: 100%;
-  padding: 4rem 2rem;
-  position: relative;
   overflow: hidden;
-
-  /* --- Dynamic Background Slideshow --- */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: backgroundSlideshow 20s infinite ease-in-out; /* 4 images * 5s each = 20s */
-  /* This ensures the initial background matches the first image in animation */
-  background-image: var(--hero-bg-1); 
+  padding-top: 80px;
 }
 
-/* Keyframes for the background image slideshow */
-@keyframes backgroundSlideshow {
-  0% { background-image: var(--hero-bg-1); opacity: 1; }
-  20% { opacity: 1; } /* Stay fully visible */
-  25% { background-image: var(--hero-bg-2); opacity: 1; } /* Fade to next image */
-  45% { opacity: 1; }
-  50% { background-image: var(--hero-bg-3); opacity: 1; }
-  70% { opacity: 1; }
-  75% { background-image: var(--hero-bg-4); opacity: 1; }
-  95% { opacity: 1; }
-  100% { background-image: var(--hero-bg-1); opacity: 1; } /* Loop back to first */
+.hero canvas {
+  z-index: 0 !important;
 }
 
+.centerContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-.heroContainer::before {
+/* --- NEW BADGE STYLE (Creative & Modern) --- */
+.availabilityBadge {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 12px;
+  padding: 8px 24px; 
+  
+  /* Glass Effect */
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Border & Radius */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 50px; /* රවුම් හැඩය */
+  
+  margin-bottom: 30px; 
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.availabilityBadge:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.badgeText {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Pulsing Dot (Improved) */
+.pulseDot {
+  position: relative;
+  width: 8px; 
+  height: 8px; 
+  background: #4ade80; /* Green */
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4ade80;
+}
+
+.pulseDot::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Dark overlay to make text readable */
-  background: rgba(0, 0, 0, 0.6); /* Adjust transparency as needed */
-  z-index: 1;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 1px solid #4ade80;
+  animation: ripple 2s infinite;
 }
 
-.heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  animation: fadeIn 1.5s ease-out;
+@keyframes ripple {
+  0% { width: 100%; height: 100%; opacity: 1; }
+  100% { width: 300%; height: 300%; opacity: 0; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* --- Fonts & Layout --- */
 .heroTitle {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: #fff;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  color: white;
+  text-shadow: 0 20px 50px rgba(0,0,0,0.5); /* ගැඹුරු පෙනුමක් */
+}
+
+.gradientText {
+  background: linear-gradient(to right, #a5b4fc, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .heroSubtitle {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: var(--text-secondary);
-  margin: 0 auto 2.5rem auto;
-  max-width: 600px;
+  font-size: 1.2rem; color: #94a3b8; margin-bottom: 0;
+  line-height: 1.6; max-width: 650px;
 }
 
-.heroButton {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #fff;
-  background: linear-gradient(90deg, var(--secondary-accent), var(--primary-accent));
-  padding: 1rem 2.5rem;
-  border: none;
-  border-radius: 50px;
-  text-decoration: none;
-  cursor: pointer;
+/* --- Animation --- */
+.animationWrapper {
+  position: relative;
+  width: 100%;
+  height: 400px; /* ඉඩ වැඩි කරා */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  z-index: 5;
+  transform: scale(1); 
+}
+
+/* --- Buttons --- */
+.btnGroup { 
+  display: flex; gap: 20px; justify-content: center; margin-top: 10px; z-index: 20;
+}
+
+.btnPrimary {
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white; border: none; border-radius: 50px;
+  font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(37, 117, 252, 0.3);
 }
 
-.heroButton:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(106, 17, 203, 0.4);
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+}
+
+.btnSecondary {
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  color: white; border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none;
+  backdrop-filter: blur(10px); transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .heroTitle { font-size: 2.5rem; }
+  .btnGroup { flex-direction: column; width: 100%; max-width: 300px; gap: 15px; }
+  .btnPrimary, .btnSecondary { width: 100%; text-align: center; }
+  .animationWrapper { transform: scale(0.85); height: 320px; }
 }
